@@ -1,21 +1,19 @@
-{ % extends "base.html"  % }  
+{% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="title">{% block title %} Students {% endblock %}</h1>
-    <div class="content">
-        {% for student in students %}
-            <div class="student">
-                <p><b># Roll Number:{{ student.roll_no }}</b></p>
-                <b>
-                    <p class="name">{{ student.firstname }} {{ student.lastname }}</p>
-                </b>
-                <p>Email : {{ student.email }}</p>
-                <p>Year : {{ student.year }} .</p>
-                <p>Mobile No: {{ student.mob}}</p>
-                <p>Branch :{{student.branch}}</p>
-                
-                
-            </div>
-        {% endfor %}
+<h1 class="title">{% block title %} Students {% endblock %}</h1>
+<div class="content">
+    {% for student in students %}
+    <div class="student">
+        <p><b># Roll Number:{{ student.roll_no }}</b></p>
+        <b>
+            <p class="name">{{ student.firstname }} {{ student.lastname }}</p>
+        </b>
+        <p>Email : {{ student.email }}</p>
+        <p>Year : {{ student.year }} .</p>
+        <p>Mobile No: {{ student.mob}}</p>
+        <p>Branch :{{student.branch}}</p>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}
